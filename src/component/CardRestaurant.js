@@ -11,7 +11,7 @@ function CardRestaurant(props){
             <div className="restaurant-info">
                 <div>
                     <span> {props.restau.name} </span>
-                    <div> {formatDate(props.restau.createAt)} </div>
+                    <div> {formatDate(props.restau.createdAt)} </div>
                     <p> {props.restau.description}
                         <br />
                         <span>

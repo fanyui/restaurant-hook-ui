@@ -26,9 +26,7 @@ export async function createRestaurant(idToken: string,
             'Authorization': `Bearer ${idToken}`
         },
         body: JSON.stringify({
-            name: newRestaurant.name,
-            location: newRestaurant.location,
-            phone: newRestaurant.phone
+            ...newRestaurant
         })
     })
     const result = await reply.json()

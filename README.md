@@ -1,4 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+This is the frontend which relies on the serverless backend code for mangaging restaurant selling out food and making deliveries.
+The big picture is for the admins side, restaurants can signup after we authenticate with them and make a contract, they then upload their menu for each day on the app,The rest of the work now is left for us to handle. Displaying and marketing the food item happens on the other end of the app where users can purchase foodstuff provided as the menu for that day by specific restaurant. Our delivery persons are responsible for delivering the product to the respective customer in the most efficient and relaible way possible. Also the subscribed restaurants are able to view their statistics and financial status on our app even though they automatically get their pay when the customer makes one.
 
 ## Available Scripts
 
