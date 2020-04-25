@@ -32,3 +32,15 @@ export async function createRestaurant(idToken: string,
     const result = await reply.json()
     return result
 }
+
+export async function deleteRestaurant(idToken: string,
+    restaurantId: string
+    ): Promise<void> {
+    await fetch(`${apiEndpoint}/restaurant/${restaurantId}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${idToken}`
+        }
+    })
+}

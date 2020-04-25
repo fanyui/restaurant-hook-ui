@@ -1,13 +1,14 @@
 import React, { useState } from "react"
 import { Link } from 'react-router-dom'
-import { TiArrowBackOutline } from 'react-icons/ti'
+import { TiArrowForwardOutline } from 'react-icons/ti'
 import { TiHeartOutline } from 'react-icons/ti'
 import { TiHeartFullOutline } from 'react-icons/ti'
+import { TiDeleteOutline } from 'react-icons/ti'
 import { formatDate } from '../utils'
 function CardRestaurant(props){
     const [likes, setLikes] = useState(false)
     return (
-        <Link to={`/restaurant/${props.restau.restaurantId}`} className="restaurant-item">
+        <div className="restaurant-item">
             <div className="restaurant-info">
                 <div>
                     <span> {props.restau.name} </span>
@@ -20,7 +21,10 @@ function CardRestaurant(props){
                     </p>
                 </div>
                 <div className='restaurant-icons'>
-                    <TiArrowBackOutline className='restaurant-icon' />
+                    <span> {props.restau.location} </span>
+                    <Link to={`/restaurant/${props.restau.restaurantId}`} >
+                    <TiArrowForwardOutline className='restaurant-icon' />
+                    </Link>
 
                     <button className='heart-button' onClick={() => setLikes(true)}  >
                         {likes === true ? <TiHeartOutline color='#e0245e' className='restaurant-icon' />
@@ -28,10 +32,10 @@ function CardRestaurant(props){
                             <TiHeartFullOutline className='restaurant-icon' />
                         }
                     </button>
-                    <span> {props.restau.location} 1</span>
+                    <TiDeleteOutline color='#e0245e' onClick={() => props.handleDelete(props.auth.getIdToken(), props.restau.restaurantId )} className='restaurant-icon' />
                 </div>
             </div>
-        </Link>
+        </div>
 
     )
 }

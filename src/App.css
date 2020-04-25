@@ -91,6 +91,7 @@
 .restaurant-icons {
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
 }
 .restaurant-icons > span {
   color: #969696;
