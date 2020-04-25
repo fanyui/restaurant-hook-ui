@@ -2,7 +2,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Description
 This is the frontend which relies on the serverless backend code for mangaging restaurant selling out food and making deliveries.
 The big picture is for the admins side, restaurants can signup after we authenticate with them and make a contract, they then upload their menu for each day on the app,The rest of the work now is left for us to handle. Displaying and marketing the food item happens on the other end of the app where users can purchase foodstuff provided as the menu for that day by specific restaurant. Our delivery persons are responsible for delivering the product to the respective customer in the most efficient and relaible way possible. Also the subscribed restaurants are able to view their statistics and financial status on our app even though they automatically get their pay when the customer makes one.
+## Dependencies
+Most of the dependencies are in the package.json file. but however the big dependency is that of the api.
+The api backend can be found here [restaurant-hook](https://github.com/fanyui/restaurant-hook)
 
+## Usage
+As at now, you can visit the app, login once you are logged in you will be able to create a restaurant. Notice that a restaurant object doesn't yet have an image. after creating the restaurant, click back on the all restaurant tab, you will find the created restaurant with the details you provided. when you click on the restaurant, you will be directed to where you can add a menu innitally you will see a zero. You can then create a menu this time around you will be allowed to add an image to a menu item and see it instantly when its done processing.
 ## Available Scripts
 
 In the project directory, you can run:
