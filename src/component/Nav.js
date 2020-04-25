@@ -1,15 +1,20 @@
 
-import React,{useState} from 'react'
+import React from 'react'
 import { NavLink } from 'react-router-dom'
-export default function Nav() {
-    const [ auth, setAuth ] = useState(true)
+// import createHistory from 'history/createBrowserHistory'
+// import Auth from '../auth/Auth'
+// const history = createHistory()
+// const authorize = new Auth(history)
+
+export default function Nav(props) {
+
     const  handleLogin = () => {
         console.log("Loggin in")
-        setAuth(true)
+        props.auth.login()
     }
     const  handleLogout = () => {
-        setAuth(false)
-        console.log("Loggin out", auth)
+            console.log("Loggin out", )
+            props.auth.logout()
     }
 
     return (
@@ -20,21 +25,29 @@ export default function Nav() {
                         Home
 					</NavLink>
                 </li>
-                <li>
-                    <NavLink to='/dashboard' exact activeClassName='active'>
-                        Dashboard
-					</NavLink>
-                </li>
+                {props.auth.isAuthenticated()
+                 && <> 
+                        <li>
+                        <NavLink to='/restaurant' exact activeClassName='active'>
+                                View All Restaurant
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to='/dashboard' exact activeClassName='active'>
+                                Creat Restaurant
+                            </NavLink>
+                        </li>
+                    </>
+                }
               <li>
-                {
-                    auth 
+                {props.auth.isAuthenticated()
                     ? 
-                    <NavLink to='/dashboard' onClick={() => handleLogout()} exact activeClassName='active'>
+                    <NavLink to='/login' onClick={() => handleLogout()} exact activeClassName='active'>
                         Logout
                     </NavLink>
                     :
-                    <NavLink to='/dashboard' onClick={() => handleLogin()} exact activeClassName='active'>
-                        Logout
+                    <NavLink to='/login' onClick={() => handleLogin()} exact activeClassName='active'>
+                        Login
                     </NavLink>
                 }
 

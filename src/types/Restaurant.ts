@@ -6,4 +6,5 @@ export interface Restaurant {
     location: string
     phone: string
     attachmentUrl?: string
+    description: string,
 }
